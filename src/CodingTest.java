@@ -1,19 +1,19 @@
 import javax.swing.plaf.synth.SynthToolTipUI;
 
-public class Hello {
+public class CodingTest {
     public static void main(String[] args) {
-        String a = "aabbaccc";
+        String a = "aabbacdscc";
         String b = "ababcdcdababcdcd";
         String c = "abcabcdede";
         String d = "abcabcabcabcdededededede";
         String e = "xababcdcdababcdcd";
-
         String qw = "aaaa";
+        System.out.println("되나확인");
 
-        int r = solution(qw);
         System.out.println("------------------");
         //System.out.println("원래문자길이 : "+c.length());
-        System.out.println(r);
+        //int r = solution(qw);
+        //System.out.println(r);
         System.out.println("------------------");
 
     }
@@ -37,7 +37,7 @@ public class Hello {
         int c = 0, check = 1;
         String compare = "";
         //c와 i
-        for (int i = 0; i > s.length(); i += sli) {
+        for (int i = 0; i < s.length(); i += sli) {
             if (i == 0) {
 
             }
