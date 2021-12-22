@@ -5,7 +5,7 @@ import java.util.stream.Collectors;
 public class Main {
 
 
-    public int solution(String s) {
+    public static int solution(String s) {
         int min = s.length();
 
         for (int i = 1; i <= s.length() / 2; i++) {
@@ -23,7 +23,7 @@ public class Main {
      * @param i i값
      * @return 압축된 문자열
      */
-    private String compression(String str, int i) {
+    private static String compression(String str, int i) {
 
         int count = 1;
         String compression = "";
