@@ -12,8 +12,8 @@ public class CodingTest {
 
         System.out.println("------------------");
         //System.out.println("원래문자길이 : "+c.length());
-        //int r = solution(qw);
-        //System.out.println(r);
+        int r = solution(d);
+        System.out.println(r);
         System.out.println("------------------");
 
     }
@@ -23,7 +23,7 @@ public class CodingTest {
         String result = "";
         for (int i = s.length() / 2; i > 0; i--) {
             if (s.substring(0, i).equals(s.substring(i, i + i))) {
-                qwe = compareM(s, i).length();
+                //qwe = compareM(s, i).length();
                 min = Math.min(min, qwe);
             }
         }
