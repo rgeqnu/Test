@@ -12,7 +12,7 @@ public class CodingTest {
 
         System.out.println("------------------");
         //System.out.println("원래문자길이 : "+c.length());
-        int r = solution(c);
+        int r = solution(qw);
         System.out.println(r);
         System.out.println("------------------");
 
@@ -21,9 +21,9 @@ public class CodingTest {
     private static int solution(String s) {
         int answer = 0, sli = 0, qwe = s.length(), min = s.length();
         String result = "";
-        for (int i = s.length() / 2; i > 0; i--) {
+        for (int i = 1; i <= s.length() / 2; i++) {
             if (s.substring(0, i).equals(s.substring(i, i + i))) {
-                System.out.println("몇번되띾요?");
+                System.out.println("몇번?");
                 qwe = compareM(s, i).length();
                 min = Math.min(min, qwe);
             }
@@ -35,7 +35,7 @@ public class CodingTest {
     private static String compareM(String s, int sli) {
         String result = "";
 
-        int c = 0, check = 1;
+        int check = 1;
         String compare = "";
         //c와 i
         for (int i = sli; i < s.length()+sli; i += sli) {
@@ -46,9 +46,19 @@ public class CodingTest {
             // 길이보다 클경우 비교대상이 무조건 다를거기 때문에 스탑
             // 남은거 뒤에 저장하고
             if (i + sli > s.length()) {
-                result += s.substring(i-sli);
-                System.out.println("브레이크 발동 "+s.substring(i-sli));
-                break;
+                if (check > 1) {
+                    result += check + s.substring(i - sli);
+                    break;
+                } else {
+                    result += s.substring(i-sli);
+
+                    System.out.println("\n브레이크 발동 "+s.substring(i-sli));
+                    System.out.println("숫자합 "+(i+sli));
+                    System.out.println("문자길이 "+s.length());
+                    System.out.println("체크 : "+ check);
+                    break;
+                    //해결 : 체크를 하다가 넘어가버림 문자길이를
+                }
             }
 
             if (compare.equals(s.substring(i, i + sli))) {
@@ -63,7 +73,10 @@ public class CodingTest {
             } else { //다를경우
                 result += compare;
                 //비교할 단어 저장
-                compare = s.substring(i - sli, i);
+                compare = s.substring(i, i+sli);
+                System.out.println("다를떄 " +compare);
+                System.out.println(result);
+                System.out.println(s);
             }
 
 
