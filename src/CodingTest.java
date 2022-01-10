@@ -14,7 +14,7 @@ public class CodingTest {
         //System.out.println("원래문자길이 : "+c.length());
         int r = solution(qw);
         System.out.println(r);
-        System.out.println("------------------");
+        System.out.println("-----------------");
 
     }
 
