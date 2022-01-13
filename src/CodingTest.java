@@ -5,33 +5,34 @@ import java.util.HashMap;
 
 public class CodingTest {
     public static void main(String[] args) {
-        String[] a = {"Enter uid1234 Muzi", "Enter uid4567 Prodo","Leave uid1234","Enter uid1234 Prodo","Change uid4567 Ryan"};
-        String[] b = solution(a);
-        for (String i : b) {
-            System.out.println(i);
-        }
+
+        System.out.println(solution(312));
+
     }
 
-    public static String[] solution(String[] record) {
-        HashMap<String,String> id = new HashMap<>();
-
-        ArrayList<String[]> arrayList = new ArrayList<String[]>();
-
-        for (int i = 0; i < record.length; i++) {
-            String[] a = record[i].split(" ");
-            if (!a[0].equals("Change")) arrayList.add(a);
-            if (!a[0].equals("Leave")) id.put(a[1],a[2]);
-        }
-
-        String[] result = new String[arrayList.size()];
-        for (int i = 0; i < arrayList.size(); i++) {
-            String x;
-            if (arrayList.get(i)[0].equals("Enter")) {
-                result[i] = id.get(arrayList.get(i)[1])+"님이 들어왔습니다.";
-            }else if(arrayList.get(i)[0].equals("Leave")){
-                result[i] = id.get(arrayList.get(i)[1]) + "님이 나갔습니다.";
+    public static String solution(int n) {
+        String answer = "";
+        //받은 숫자를 나눠 줍시다
+        if (n == 3) {
+            answer += 4;
+        } else if (n < 4) {
+            answer += n;
+        } else {
+            while (n / 3 > 0) {
+                System.out.println("실행");
+                if (n % 3 == 0) {
+                    answer += 4;
+                    n = (n / 3) - 1;
+                } else {
+                    answer += n % 3;
+                    n = n / 3;
+                }
+                if (n / 3 == 0) {
+                    answer += n;
+                }
             }
         }
-        return result;
+        return answer;
+        }
+
     }
-}
