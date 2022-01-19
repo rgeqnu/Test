@@ -6,7 +6,7 @@ import java.util.HashMap;
 public class CodingTest {
     public static void main(String[] args) {
 
-        System.out.println(solution(312));
+        System.out.println(solution(17));
 
     }
 
@@ -14,7 +14,7 @@ public class CodingTest {
         String answer = "";
         String[] ans = {"4","1","2"};
         //받은 숫자를 나눠 줍시다
-        if (n / 3 > 1) {
+        if (n / 3 < 1) {
             //수정해야한
             answer = ans[n] + answer;
         } else {
