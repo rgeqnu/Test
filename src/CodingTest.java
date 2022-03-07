@@ -6,30 +6,37 @@ import java.util.HashMap;
 public class CodingTest {
     public static void main(String[] args) {
 
-        System.out.println(solution(17));
+        String[] id_list = {"muzi", "frodo", "apeach", "neo"};
+        String[] report = {"muzi frodo","apeach frodo","apeach frodo","apeach frodo","frodo neo","muzi neo","apeach muzi","frodo neo"};
+        solution(id_list,report,2);
 
     }
 
-    public static String solution(int n) {
-        String answer = "";
-        String[] ans = {"4","1","2"};
-        //받은 숫자를 나눠 줍시다
-        if (n / 3 < 1) {
-            //수정해야한
-            answer = ans[n] + answer;
-        } else {
-            while (n / 3 > 0) {
-                answer = ans[n % 3] + answer;
-                if (n % 3 == 0) {
-                    n = (n / 3) - 1;
-                } else {
-                    n = n / 3;
-                }
-                if (n / 3 == 0) {
-                    //여기도 수정
-                    answer = n + answer;
+    public static int[] solution(String[] id_list, String[] report, int k){
+        int[] answer = {};
+        int a = 0;
+        /*일단 중복제거
+        *
+        *
+        *
+        * */
+
+        for (int i = 0; i < report.length; i++) {
+            if (report[i].equals("x")) {
+                System.out.println("확인");
+            }else {
+                a++;
+                for (int j = i + 1; j < report.length; j++) {
+                    if (report[i].equals(report[j])) {
+                        System.out.println(report[j]);
+                        report[j] = "x";
+                    }
                 }
             }
+        }
+        System.out.println("a의 값"+a);
+        for (String s : report) {
+            System.out.println(s);
         }
         return answer;
         }
