@@ -7,7 +7,7 @@ public class CodingTest {
     public static void main(String[] args) {
 
         String[] id_list = {"muzi", "frodo", "apeach", "neo"};
-        String[] report = {"muzi frodo","apeach frodo","apeach frodo","apeach frodo","frodo neo","muzi neo","apeach muzi","frodo neo"};
+        String[] report = {"muzi frodo","apeach frodo","apeach frodo","apeach frodo","frodo neo","muzi neo","apeach muzi"};
         solution(id_list,report,2);
 
     }
